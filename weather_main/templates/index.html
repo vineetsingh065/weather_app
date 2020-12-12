@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+		
+		<title>DigiOni Weather App</title>
+
+		<!-- Loading third party fonts -->
+		<link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
+		<link href="{% static 'fonts/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+
+		<!-- Loading main css file -->
+		<link rel="stylesheet" href="{% static 'style.css' %}">
+
+	</head>
+
+
+	<body>
+		
+		<div class="site-content">
+			<div class="site-header">
+				<div class="container">
+					<a href="index.html" class="branding">
+						<img src="{% static 'images/logo.png' %}" alt="" class="logo">
+						<div class="logo-type">
+							<h1 class="site-title">Digioni Weather</h1>
+							<small class="site-description"></small>
+						</div>
+					</a>
+
+					<!-- Default snippet for navigation -->
+					
+
+					<div class="mobile-navigation"></div>
+
+				</div>
+			</div> <!-- .site-header -->
+
+			<div class="hero" data-bg-image="images/banner.png">
+				<div class="container">
+					<form action="{% url 'home' %}" method="post" class="find-location">
+                        {% csrf_token %}
+						<input type="text" name="location" placeholder="Find your location...">
+						<input type="submit" value="Find">
+					</form>
+
+				</div>
+			</div>
+			<div class="forecast-table">
+				<div class="container">
+					<div class="forecast-container">
+
+						<div class="today forecast">
+							<div class="forecast-header">
+								<div class="day">{{ day }}</div>
+{#								<div class="date">6 Oct</div>#}
+							</div> <!-- .forecast-header -->
+							<div class="forecast-content">
+								<div class="location">{{ city }}</div>
+								<div class="degree">
+									<div class="num">{{ temp }}<sup>o</sup>C</div>
+									<div class="forecast-icon">
+										<img src="{% static 'images/icons/icon-1.svg' %}" alt="" width=90>
+									</div>	
+								</div>
+								<span><img src="{% static 'images/icon-umberella.png' %}" alt="">{{ feels }}%</span>
+								<span><img src="{% static 'images/icon-wind.png' %}" alt="">{{ wind }}km/h</span>
+{#								<span><img src="{% static 'images/icon-compass.png' %}" alt="">East</span>#}
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			
+			</main> <!-- .main-content -->
+
+			<footer class="site-footer">
+				<div class="container">
+
+					<p class="colophon">Copyright Digioni Arc</p>
+				</div>
+			</footer> <!-- .site-footer -->
+		</div>
+		
+		<script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+		<script src="{% static 'js/plugins.js' %}"></script>
+		<script src="{% static 'js/app.js' %}"></script>
+		
+	</body>
+
+</html>
