@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 's9wfe^3rsdpx)k@j@6+i%j#+*rmy%gg-nbgsn+!01tbdcyl@ii'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -123,3 +123,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [ os.path.join(BASE_DIR, "weather_main/static"), ]
 
 OPEN_WEATHER_API_KEY = 'a2c1e472650c465a93403abfe38670e5'
+AQI_KEY = 'pfi40gqu4cjtoe0mg120j0am7s'
