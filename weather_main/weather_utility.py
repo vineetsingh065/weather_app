@@ -33,6 +33,6 @@ def get_current_weather(city):
 
     for params in aqi_request['data']['aqiParams']:
         if params['name'] == aqi_request['data']['dominating']:
-            data['aqi'] = params['name']+" "+str(params['aqi'])
+            data['aqi'] = params['name']+" - "+str(params['aqi'])
 
     return data
