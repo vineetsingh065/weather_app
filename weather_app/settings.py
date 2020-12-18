@@ -120,8 +120,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'weather_main/static')
-STATICFILES_DIRS = [ os.path.join(BASE_DIR, "weather_main/static"), ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATICFILES_DIRS = [ os.path.join(BASE_DIR, "weather_main/static"), ]
 
 OPEN_WEATHER_API_KEY = 'a2c1e472650c465a93403abfe38670e5'
 AQI_KEY = 'pfi40gqu4cjtoe0mg120j0am7s'
